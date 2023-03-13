@@ -1,22 +1,17 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
+  <h1 class="card-title">
     <%= post.title %>
-  </p>
+  </h1>
 
   <p>
-    <strong>Description:</strong>
-    <%= post.description %>
+   <em><%= post.description %></em>
   </p>
-
   <p>
-    <strong>Content:</strong>
+  <em>Posted: <%= post.created_at.strftime("%Y-%m-%d %H:%M") %></em>
+  </p>
+  <hr>
+  <div class="card-body text-start">
     <%= post.content %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
+  </div>
 
 </div>

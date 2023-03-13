@@ -1,14 +1,23 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Posts</h1>
-
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+<div class="text-center">
+<h1>Blog</h1>
+<% if user_signed_in? %>
+  <% if current_user.role == 'admin' %>
+  <p><%= link_to "New post", new_post_path %></p>
   <% end %>
+<% end %>
+<div id="posts" class="list-group">
+    <% @posts.each do |post| %>
+    <div class="list-group-item">
+      <h3><%= link_to post.title, post %></h3>
+    <p><em><%= post.description %></em></p>
+    <p>Posted: <%= post.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+    </div>
+    <% end %>
+  
 </div>
-
-<%= link_to "New post", new_post_path %>
+<div>
+<%= paginate @posts, theme: 'bootstrap-5',
+                   pagination_class: "pagination-sm flex-wrap justify-content-center",
+                   nav_class: "d-inline-block" %>
+</div>
+</div>
