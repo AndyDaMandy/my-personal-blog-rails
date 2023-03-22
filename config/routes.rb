@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "about", to: "home#about"
   get "home", to: "home#index"
+  get "paintings", to: "home#paintings"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

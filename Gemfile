@@ -48,7 +48,7 @@ gem "letter_opener", group: :development
 gem 'sendgrid-ruby'
 
 #aws
-gem 'aws-sdk-rails', '~> 3'
+#gem 'aws-sdk-rails', '~> 3'
 gem 'aws-sdk-s3', '~> 1'
 
 # Use Redis adapter to run Action Cable in production

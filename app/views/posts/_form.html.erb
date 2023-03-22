@@ -11,20 +11,20 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :description, style: "display: block" %>
     <%= form.text_field :description %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :content, style: "display: block" %>
-    <div>
-    <%= form.rich_text_area :content %>
+    <div class="mb-3">
+    <%= form.rich_text_area :content, placeholder: "Enter Text Here" %>
     </div>
   </div>
   <div>
