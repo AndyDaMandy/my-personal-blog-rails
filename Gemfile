@@ -36,6 +36,9 @@ gem "devise"
 #figaro
 gem "figaro"
 
+#sendgrid
+gem 'sendgrid-ruby'
+
 #kaminari for pagination
 gem 'kaminari'
 #bootstrap5 for kaminari
