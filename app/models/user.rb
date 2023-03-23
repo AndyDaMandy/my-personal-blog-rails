@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   has_many :comments, dependent: :destroy
+  validates :username, presence: true, length: { maximum: 20 }
 
 
   enum role: [:user, :moderator, :admin]

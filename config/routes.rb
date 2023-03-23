@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :posts
-  devise_for :users
+  resources :posts do
+    resources :comments
+  end
+  devise_for :users do
+    resources :comments
+  end
 
   get "about", to: "home#about"
   get "home", to: "home#index"
