@@ -31,7 +31,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :user_name => 'apikey',
     :password => ENV['SENDGRID_API_KEY'], 
-    :domain => 'amaldo-blog.fly.dev',
+    :domain => 'andydamandy-blog.fly.dev',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
