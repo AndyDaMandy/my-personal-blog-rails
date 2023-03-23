@@ -51,6 +51,8 @@ gem 'sendgrid-ruby'
 #gem 'aws-sdk-rails', '~> 3'
 gem 'aws-sdk-s3', '~> 1'
 
+gem 'friendly_id', '~> 5.4.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
