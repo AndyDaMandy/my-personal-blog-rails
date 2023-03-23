@@ -5,6 +5,16 @@
 <div class="my-2 py-2">
   <%= render @post %>
 </div>
+<div class="my-2">
+  <h2>Comments</h2>
+  <%= render @post.comments %>
+</div>
+<%if user_signed_in? %>
+  <h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+<% else %>
+<p>You must sign in to comment!</p>
+<% end %>
 
 <div class="my-3">
   <%= link_to "Back to posts", posts_path %>
