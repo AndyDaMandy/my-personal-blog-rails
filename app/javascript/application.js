@@ -6,7 +6,7 @@ import * as bootstrap from "bootstrap"
 import "trix"
 import "@rails/actiontext"
 //=require activestorage
-
+/*
 addEventListener("click", function(event) {
     var el = event.target
   
@@ -14,3 +14,4 @@ addEventListener("click", function(event) {
       el.setAttribute("target", "_blank")
     }
   }, true)
+*/
