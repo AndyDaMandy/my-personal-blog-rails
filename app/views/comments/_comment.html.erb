@@ -4,7 +4,7 @@
   </strong> 
   -
   <%= comment.content %> | 
-  <em>commented on:
+  <em>
   <%= comment.created_at.strftime("%c")%>
   <% if comment.created_at != comment.updated_at %>
  | <%= comment.updated_at.strftime("%c") %>

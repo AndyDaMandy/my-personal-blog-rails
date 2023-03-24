@@ -40,12 +40,13 @@
       <% if user_signed_in? %>
     
         <%if current_user.role == 'moderator'|| current_user.role == 'admin'%>
-        <span class="navbar-text">
-        <%= current_user.role %>  || 
-        </span>  
+        <span class="navbar-text mr-5">
+        <%= current_user.role %> | 
+        </span>
+        &nbsp;  
         <% end %>
         <span class="navbar-text">
-        <strong><%= current_user.username %></strong>.
+        <strong><%= current_user.username %></strong>
         </span>
        
         <li class="nav-item">
