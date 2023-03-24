@@ -3,17 +3,17 @@
     <%= post.title %>
   </h1>
 
-  <h4>
+  <h4 data-controller="hello">
    <em><%= post.description %></em>
   </h4>
   <hr>
   <p>
   By Andy Maldonado
   <br>
-  <em>Posted: <%= post.created_at.strftime("%Y-%m-%d %H:%M") %></em>
+  <em>Posted: <%= post.created_at.strftime("%c") %></em>
   </p>
   <hr>
-  <div class="card-body text-start">
+  <div class="card-body text-start" data-controller="richtext">
     <%= post.content %>
   </div>
 

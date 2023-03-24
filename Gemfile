@@ -47,9 +47,6 @@ gem 'bootstrap5-kaminari-views'
 #letter opener for mailers in dev
 gem "letter_opener", group: :development
 
-#sendgrid
-gem 'sendgrid-ruby'
-
 #aws
 #gem 'aws-sdk-rails', '~> 3'
 gem 'aws-sdk-s3', '~> 1'
