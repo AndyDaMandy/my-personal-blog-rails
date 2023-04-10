@@ -5,6 +5,7 @@
   <p><%= link_to "New post", new_post_path %></p>
   <% end %>
 <% end %>
+<%= render 'search' %>
 <div id="posts" class="list-group">
     <% @posts.each do |post| %>
     <div class="list-group-item p-3">

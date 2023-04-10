@@ -1,0 +1,5 @@
+<%= form_with url: posts_path, method: :get, class: "mb-3" do |form| %>
+  <%= form.text_field :search, placeholder: "Search Blog Posts" %>
+  <%= form.submit "Search" %> | 
+  <%= link_to "Clear Search", posts_path%>
+<% end %>

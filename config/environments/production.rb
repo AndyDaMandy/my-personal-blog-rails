@@ -26,13 +26,13 @@ Rails.application.configure do
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
-  config.action_mailer.default_url_options = { host: 'andydamandy-blog.fly.dev' }
+  config.action_mailer.default_url_options = { host: 'andresmaldonado.art' }
 
   #sendgrid
   ActionMailer::Base.smtp_settings = {
     :user_name => 'apikey',
     :password => ENV['SENDGRID_API_KEY'], 
-    :domain => 'andydamandy-blog.fly.dev',
+    :domain => 'andresmaldonado.art',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,

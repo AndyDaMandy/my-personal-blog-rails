@@ -5,8 +5,11 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    #@posts = Post.all
-    @posts = Post.order(created_at: :desc).page(params[:page]).per(10)
+    if params[:search]
+      @posts = Post.find_title(params[:search]).order(created_at: :desc).page(params[:page]).per(10)
+    else 
+      @posts = Post.order(created_at: :desc).page(params[:page]).per(10)
+    end
   end
 
   # GET /posts/1 or /posts/1.json
