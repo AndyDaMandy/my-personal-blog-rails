@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Post model for generating blog posts
 class Post < ApplicationRecord
   validates :title, presence: true, length: {minimum: 1, maximum: 250 }
   validates :description, presence: true, length:  {minimum: 1, maximum: 250 }
@@ -8,7 +11,8 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  def should_generate_new_friendly_id? #will change the slug if the name changed
+  # will change the slug in moment the name changed
+  def should_generate_new_friendly_id?
     title_changed?
   end
 

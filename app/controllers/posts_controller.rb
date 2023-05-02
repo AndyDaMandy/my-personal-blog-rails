@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller for posts
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :is_user?, only: %i[index show]
@@ -5,16 +8,15 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    if params[:search]
-      @posts = Post.find_title(params[:search]).order(created_at: :desc).page(params[:page]).per(10)
-    else 
-      @posts = Post.order(created_at: :desc).page(params[:page]).per(10)
-    end
+    @posts = if params[:search]
+               Post.find_title(params[:search]).order(created_at: :desc).page(params[:page]).per(10)
+             else
+               Post.order(created_at: :desc).page(params[:page]).per(10)
+             end
   end
 
   # GET /posts/1 or /posts/1.json
-  def show
-  end
+  def show; end
 
   # GET /posts/new
   def new
@@ -22,17 +24,16 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /posts or /posts.json
   def create
     if current_user.role == 'admin'
       @post = Post.new(post_params)
       @post.user_id = current_user.id
-      #if @post.images.attached?
-        @post.images.attach(params[:images])
-      #end
+      # @post.images.attached?
+      @post.images.attach(params[:images])
+      # #end
       respond_to do |format|
         if @post.save
           format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
@@ -51,7 +52,7 @@ class PostsController < ApplicationController
   def update
     if current_user.role == 'admin'
       #if @post.images.attached?
-        @post.images.attach(params[:images])
+      @post.images.attach(params[:images])
       #end
       respond_to do |format|
         if @post.update(post_params)
@@ -78,16 +79,19 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.friendly.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def post_params
-      params.require(:post).permit(:title, :description, :content, images: [])
-    end
-    def is_user?
-      user_signed_in? == false || current_user.role == 'user'
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.friendly.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def post_params
+    params.require(:post).permit(:title, :description, :content, images: [])
+  end
+
+  def is_user?
+    user_signed_in? == false || current_user.role == 'user'
+  end
+
 end
