@@ -1,0 +1,10 @@
+<%= link_to "Back to portfolio", portfolios_path %>
+<%= render @portfolio %>
+
+<% if user_signed_in? && current_user.role == 'admin' %>
+<div>
+  <%= link_to "Edit this project", edit_portfolio_path(@portfolio) %> |
+
+  <%= button_to "Destroy this project", @portfolio, method: :delete %>
+</div>
+<% end %>

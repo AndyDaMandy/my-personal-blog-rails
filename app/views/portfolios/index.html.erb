@@ -1,0 +1,13 @@
+<h1>Portfolio</h1>
+
+<div id="portfolios">
+  <% @portfolios.each do |portfolio| %>
+    <%= render portfolio %>
+    <p>
+      <%= link_to "More about this project", portfolio %>
+    </p>
+  <% end %>
+</div>
+<% if user_signed_in? && curent_user.role == 'admin' %>
+<%= link_to "New portfolio", new_portfolio_path %>
+<% end %>
