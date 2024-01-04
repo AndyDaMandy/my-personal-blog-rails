@@ -10,7 +10,13 @@
 
         gtag('config', 'G-ZSNW593KBG');
     </script>
-    <title>Andy's Tech and Art Space</title>
+    <title>
+      <% if content_for?(:title) %>
+        <%= yield :title %>
+      <% else %>
+        Andy's Tech and Art Space
+      <% end %>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
