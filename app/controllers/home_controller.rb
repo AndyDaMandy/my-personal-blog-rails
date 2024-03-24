@@ -2,6 +2,9 @@
 
 # serves static content
 class HomeController < ApplicationController
-    def index; end
-    def about; end
+  def index
+    @recent_posts = Post.last(5)
+  end
+
+  def about; end
 end
