@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-  devise_for :users do
-    resources :comments
-  end
+  # devise_for :users
+  devise_for :users, path_names: {
+    sign_up: ''
+  }
 
   get 'about', to: 'home#about'
   get 'home', to: 'home#index'

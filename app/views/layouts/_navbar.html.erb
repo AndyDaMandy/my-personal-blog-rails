@@ -51,7 +51,6 @@
         <span class="navbar-text">
         <strong><%= current_user.username %></strong>
         </span>
-       
         <li class="nav-item">
         <%= link_to "Edit profile", edit_user_registration_path, class: "nav-link" %>
         </li>
@@ -60,10 +59,7 @@
         </li>
         <% else %>
         <li class="nav-item">
-        <%= link_to "Login", new_user_session_path, class: "nav-link"  %>
-        </li>
-        <li class="nav-item">
-            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+        <%= link_to "Admin Login", new_user_session_path, class: "nav-link"  %>
         </li>
       <% end %>
       </ul>

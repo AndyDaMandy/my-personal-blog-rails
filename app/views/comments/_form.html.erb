@@ -1,9 +1,0 @@
-<%= form_with model: [ @post, @post.comments.build ] do |form| %>
-  <p>
-    <%= form.label :content, "Comment:" %><br>
-    <%= form.text_area :content %>
-  </p>
-  <p class="mb-3">
-    <%= form.submit %>
-  </p>
-<% end %>

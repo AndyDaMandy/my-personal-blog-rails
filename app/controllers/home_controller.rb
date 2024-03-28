@@ -7,4 +7,6 @@ class HomeController < ApplicationController
   end
 
   def about; end
+
+  def paintings; end
 end
