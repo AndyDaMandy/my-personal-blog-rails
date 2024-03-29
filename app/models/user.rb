@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
   validates :username, presence: true, length: { maximum: 20 }
   has_many :posts, dependent: :destroy
+  has_many :artworks, dependent: :destroy
 
   enum role: %i[user moderator admin]
   after_initialize :set_default_role, if: :new_record?

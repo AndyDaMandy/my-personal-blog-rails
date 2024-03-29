@@ -3,8 +3,8 @@
 # Controller for posts
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :is_user?, only: %i[index show]
   before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :ensure_admin, only: %i[new create edit update destroy]
 
   # GET /posts or /posts.json
   def index
@@ -28,11 +28,10 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    if current_user.role == 'admin'
       @post = Post.new(post_params)
-      @post.user_id = current_user.id
+      @post.user = current_user
       # @post.images.attached?
-      @post.images.attach(params[:images])
+      # @post.images.attach(params[:images])
       # #end
       respond_to do |format|
         if @post.save
@@ -43,16 +42,12 @@ class PostsController < ApplicationController
           format.json { render json: @post.errors, status: :unprocessable_entity }
         end
       end
-    else
-      format.html { redirect_to @post, notice: "You do not have access to create a post."}
-    end
   end
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    if current_user.role == 'admin'
       #if @post.images.attached?
-      @post.images.attach(params[:images])
+      # @post.images.attach(params[:images])
       #end
       respond_to do |format|
         if @post.update(post_params)
@@ -63,9 +58,6 @@ class PostsController < ApplicationController
           format.json { render json: @post.errors, status: :unprocessable_entity }
         end
       end
-    else
-      format.html { redirect_to @post, notice: "You do not have access to create an edit."}
-    end
   end
 
   # DELETE /posts/1 or /posts/1.json
@@ -90,8 +82,14 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :description, :content, images: [])
   end
 
-  def is_user?
-    user_signed_in? == false || current_user.role == 'user'
+  # def is_user?
+  #   user_signed_in? == false || current_user.role == 'user'
+  # end
+
+  def ensure_admin
+    if current_user.role != 'admin'
+      raise ActionController::RoutingError, 'Not Found'
+    end
   end
 
 end

@@ -1,0 +1,16 @@
+<h1>Artworks</h1>
+
+<% if user_signed_in? && current_user.role == 'admin' %>
+  <%= link_to "New artwork", new_artwork_path %>
+<% end %>
+
+<div id="artworks">
+  <% @artworks.each do |artwork| %>
+  <div class="mb-3 border">
+    <%= link_to artwork do %>
+      <h2><%= artwork.title %></h2>
+      <%= image_tag artwork.image, class: "img-thumbnail", style: "width: 50%;"%>
+    <% end %>
+    </div>
+  <% end %>
+</div>

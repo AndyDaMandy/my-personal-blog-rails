@@ -1,0 +1,12 @@
+<div>
+<%= link_to "Back to artworks", artworks_path %>
+</div>
+<%= render @artwork %>
+
+<% if user_signed_in? && current_user.role == 'admin' %>
+<div>
+  <%= link_to "Edit this artwork", edit_artwork_path(@artwork) %> |
+
+  <%= button_to "Destroy this artwork", @artwork, method: :delete %>
+</div>
+<% end %>

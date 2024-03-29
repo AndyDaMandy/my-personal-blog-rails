@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 
+  def ensure_admin
+    if current_user.role != 'admin'
+      raise ActionController::RoutingError, 'Not Found'
+    end
+  end
+
 end
