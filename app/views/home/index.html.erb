@@ -26,7 +26,9 @@
                 <li class="list-group-item">
                     <a href="<%= link.url %>" target="_blank"><%= link.url_name %></a>
                 <% if user_signed_in? && current_user.role == 'admin'%>
-                | <%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %>
+                | <%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Delete', link, method: :delete, data: { 
+                    turbo_method: :delete,
+                    turbo_confirm: 'Are you sure?' } %>
                 <% end %>
                 </li>
             <% end %>
