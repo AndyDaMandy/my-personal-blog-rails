@@ -19,6 +19,17 @@
         </ul>
       <ul class="list-group">
             <li class="list-group-item"><strong>Social</strong></li>
+            <% if user_signed_in? && current_user.role == 'admin'%>
+                <li class="list-group-item"><%= link_to "Create New Link", new_link_path %></li>
+            <% end %>
+            <% @links.each do |link| %>
+                <li class="list-group-item">
+                    <a href="<%= link.url %>" target="_blank"><%= link.url_name %></a>
+                <% if user_signed_in? && current_user.role == 'admin'%>
+                | <%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+                </li>
+            <% end %>
             <li class="list-group-item"><%= link_to "My Paintings", paintings_path %></li>
             <li class="list-group-item"><a href="https://andymdeveloper.substack.com/" target="_blank">Substack</a></li>
             <li class="list-group-item"><a href="https://medium.com/@maldonado.andy.m" target="_blank">Medium</a></li>
