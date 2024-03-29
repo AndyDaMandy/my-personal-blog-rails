@@ -1,3 +1,7 @@
+<% content_for(:title) do %>
+  Artworks | Andy's Tech and Art Space
+<% end %>
+
 <div class="text-center">
 
 <div>
@@ -12,12 +16,17 @@
 
 <div id="artworks">
   <% @artworks.each do |artwork| %>
-  <div class="mb-3 border">
+  <div class="mb-3 card p-3">
     <%= link_to artwork do %>
       <h2><%= artwork.title %></h2>
       <%= image_tag artwork.image, class: "img-thumbnail", style: "width: 50%;"%>
     <% end %>
     </div>
   <% end %>
+  </div>
+<div>
+<%= paginate @artworks, theme: 'bootstrap-5',
+                   pagination_class: "pagination-sm flex-wrap justify-content-center",
+                   nav_class: "d-inline-block" %>
 </div>
 </div>

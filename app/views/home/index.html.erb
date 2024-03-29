@@ -1,5 +1,17 @@
 <div class="text-center">
     <h1 class="card-title py-3 mb-3">Andy's Tech and Art Space</h1>
+
+    <div class="card p-3 mb-3">
+        <%= link_to @latest_artwork do %>
+        <%= image_tag @latest_artwork.image, class: "img-fluid", style: "width: 50%;"%>
+        <% end%>
+        <p>
+            <strong>Latest Artwork:</strong> <%= @latest_artwork.title%>
+        </p>
+        <p>
+            <hr>
+            <%= link_to "All Artworks", artworks_path %>
+    </div>
     <div class="card-body py-2">
         <ul class="list-group mb-4">
             <li class="list-group-item"><strong>Blog</strong></li>
@@ -32,12 +44,6 @@
                 <% end %>
                 </li>
             <% end %>
-            <li class="list-group-item"><%= link_to "My Paintings", paintings_path %></li>
-            <li class="list-group-item"><a href="https://andymdeveloper.substack.com/" target="_blank">Substack</a></li>
-            <li class="list-group-item"><a href="https://medium.com/@maldonado.andy.m" target="_blank">Medium</a></li>
-            <li class="list-group-item"><a href="https://instagram.com/andresmaldonadoart" target="_blank">Instagram</a></li>
-            <li class="list-group-item"><a href="https://www.codewars.com/users/AndyDaMandy" target="_blank">Codewars</a></li>
-            <li class="list-group-item"><a href="https://www.linkedin.com/in/andres-maldonado-1b1b0a1a0/" target="_blank">LinkedIn</a></li>
         </ul>
     </div>
 </div>
