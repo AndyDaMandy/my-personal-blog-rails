@@ -86,10 +86,10 @@ class PostsController < ApplicationController
   #   user_signed_in? == false || current_user.role == 'user'
   # end
 
-  def ensure_admin
-    if current_user.role != 'admin'
-      raise ActionController::RoutingError, 'Not Found'
-    end
-  end
+  # def ensure_admin
+  #   if current_user.role != 'admin'
+  #     raise ActionController::RoutingError, 'Not Found'
+  #   end
+  # end
 
 end
