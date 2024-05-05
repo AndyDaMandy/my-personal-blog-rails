@@ -36,6 +36,9 @@ gem "devise"
 #figaro
 gem "figaro"
 
+# feedjira for rss feeds
+gem "feedjira"
+
 #sendgrid
 gem 'sendgrid-ruby'
 

@@ -3,9 +3,8 @@
 Rails.application.routes.draw do
   resources :artworks
   resources :portfolios, path: 'portfolio'
-  resources :posts do
-    resources :comments
-  end
+  resources :posts
+  get 'rss_feed', to: 'posts#rss_feed', format: 'xml'
   resources :links
   # devise_for :users
   devise_for :users, path_names: {

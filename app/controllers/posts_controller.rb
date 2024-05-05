@@ -70,6 +70,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def rss_feed
+    @posts = Post.order(created_at: :desc).limit(5)
+    respond_to do |format|
+      format.xml { render layout: false }
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

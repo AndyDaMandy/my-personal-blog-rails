@@ -3,6 +3,9 @@
 <% end %>
 <div class="text-center">
 <h1 class="mb-3">Andy's Blog</h1>
+  <div class="mb-2">
+    <%= link_to "Subscribe to RSS", rss_feed_path(format: :xml) %>
+  </div>
 <% if user_signed_in? %>
   <% if current_user.role == 'admin' %>
   <p><%= link_to "New post", new_post_path %></p>

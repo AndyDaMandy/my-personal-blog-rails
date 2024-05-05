@@ -65,6 +65,7 @@
     <orderEntry type="library" scope="PROVIDED" name="dockerfile-rails (v1.6.1, rbenv: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="drb (v2.2.0, rbenv: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.12.0, rbenv: 3.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="feedjira (v3.2.3, rbenv: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.16.3, rbenv: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="figaro (v1.2.0, rbenv: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="friendly_id (v5.4.2, rbenv: 3.3.0) [gem]" level="application" />
@@ -126,6 +127,7 @@
     <orderEntry type="library" scope="PROVIDED" name="ruby-vips (v2.2.0, rbenv: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_http_client (v3.5.5, rbenv: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, rbenv: 3.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sax-machine (v1.3.2, rbenv: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.10.0, rbenv: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sendgrid-ruby (v6.7.0, rbenv: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.1, rbenv: 3.3.0) [gem]" level="application" />
