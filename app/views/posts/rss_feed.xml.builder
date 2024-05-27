@@ -11,9 +11,14 @@ xml.rss version: '2.0' do
       xml.item do
         xml.title post.title
         xml.description post.description
-        xml.body ActionController::Base.helpers.strip_tags(render(html: post.content.to_s).squish) # Render ActionText content as HTML and strip tags
-        xml.pubDate post.created_at.strftime('%a, %d %b %Y %H:%M:%S %z')
         xml.link post_url(post)
+        xml.body 'Read the full post on the site.'
+        # places xml.body in the feed
+        # xml.body post.content.to_s
+        # xml.body ActionController::Base.helpers.strip_tags(render(html: post.content)) # Render ActionText content as HTML and strip tags
+        # xml.body Nokogiri::HTML(post.content.to_s).to_xml
+        # xml.body Nokogiri::HTML5(post.content.to_s).to_xml
+        xml.pubDate post.created_at.strftime('%a, %d %b %Y %H:%M:%S %z')
       end
     end
   end
