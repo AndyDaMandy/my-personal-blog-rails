@@ -19,5 +19,5 @@ class Post < ApplicationRecord
   has_many_attached :images
   has_one :content_inside, class_name: 'ActionText::RichText', as: :record, dependent: :destroy
 
-  scope :find_title, -> (title) {where("lower(title) ILIKE ?", '%' + title.downcase + '%')}
+  scope :find_title, ->(title) { where("lower(title) ILIKE ?", '%' + title.downcase + '%') }
 end
