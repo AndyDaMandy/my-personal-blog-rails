@@ -15,9 +15,6 @@ xml.rss version: '2.0' do
         xml.body 'Read the full post on the site.'
         # places xml.body in the feed
         # xml.body post.content.to_s
-        # xml.body ActionController::Base.helpers.strip_tags(render(html: post.content)) # Render ActionText content as HTML and strip tags
-        # xml.body Nokogiri::HTML(post.content.to_s).to_xml
-        # xml.body Nokogiri::HTML5(post.content.to_s).to_xml
         xml.pubDate post.created_at.strftime('%a, %d %b %Y %H:%M:%S %z')
       end
     end
