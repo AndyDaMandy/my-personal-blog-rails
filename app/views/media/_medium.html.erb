@@ -1,0 +1,52 @@
+<div id="<%= dom_id medium %>">
+  <p>
+    <strong>Name:</strong>
+    <%= medium.name %>
+  </p>
+
+  <p>
+    <strong>Thumbnail:</strong>
+    <%= link_to medium.thumbnail.filename, medium.thumbnail if medium.thumbnail.attached? %>
+  </p>
+
+  <p>
+    <strong>Release date:</strong>
+    <%= medium.release_date %>
+  </p>
+
+  <p>
+    <strong>Type:</strong>
+    <%= medium.type %>
+  </p>
+
+  <p>
+    <strong>Platform:</strong>
+    <%= medium.platform %>
+  </p>
+
+  <p>
+    <strong>Link:</strong>
+    <%= medium.link %>
+  </p>
+
+  <p>
+    <strong>Thoughts:</strong>
+    <%= medium.thoughts %>
+  </p>
+
+  <p>
+    <strong>Date started:</strong>
+    <%= medium.date_started %>
+  </p>
+
+  <p>
+    <strong>Date completed:</strong>
+    <%= medium.date_completed %>
+  </p>
+
+  <p>
+    <strong>Progress:</strong>
+    <%= medium.progress %>
+  </p>
+
+</div>

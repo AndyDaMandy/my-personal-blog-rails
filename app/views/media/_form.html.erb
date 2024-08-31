@@ -1,0 +1,67 @@
+<%= form_with(model: medium) do |form| %>
+  <% if medium.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(medium.errors.count, "error") %> prohibited this medium from being saved:</h2>
+
+      <ul>
+        <% medium.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_area :name %>
+  </div>
+
+  <div>
+    <%= form.label :thumbnail, style: "display: block" %>
+    <%= form.file_field :thumbnail %>
+  </div>
+
+  <div>
+    <%= form.label :release_date, style: "display: block" %>
+    <%= form.date_field :release_date %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.number_field :type %>
+  </div>
+
+  <div>
+    <%= form.label :platform, style: "display: block" %>
+    <%= form.number_field :platform %>
+  </div>
+
+  <div>
+    <%= form.label :link, style: "display: block" %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div>
+    <%= form.label :thoughts, style: "display: block" %>
+    <%= form.text_area :thoughts %>
+  </div>
+
+  <div>
+    <%= form.label :date_started, style: "display: block" %>
+    <%= form.date_field :date_started %>
+  </div>
+
+  <div>
+    <%= form.label :date_completed, style: "display: block" %>
+    <%= form.date_field :date_completed %>
+  </div>
+
+  <div>
+    <%= form.label :progress, style: "display: block" %>
+    <%= form.number_field :progress %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

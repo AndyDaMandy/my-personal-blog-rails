@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  release_date: 2024-08-31
+  type: 1
+  platform: 1
+  link: MyString
+  thoughts: MyText
+  date_started: 2024-08-31
+  date_completed: 2024-08-31
+  progress: 1
+
+two:
+  name: MyText
+  release_date: 2024-08-31
+  type: 1
+  platform: 1
+  link: MyString
+  thoughts: MyText
+  date_started: 2024-08-31
+  date_completed: 2024-08-31
+  progress: 1

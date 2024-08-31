@@ -21,11 +21,9 @@
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/AndyDaMandy" target="_blank">GitHub</a>
         </li>
-        
       </ul>
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
       <% if user_signed_in? %>
-    
         <%if current_user.role == 'moderator'|| current_user.role == 'admin'%>
         <span class="navbar-text mr-5">
         <%= current_user.role %> | 
