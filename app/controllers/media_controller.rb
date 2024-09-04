@@ -26,6 +26,7 @@ class MediaController < ApplicationController
   # POST /media or /media.json
   def create
     @medium = Medium.new(medium_params)
+    @medium.user = current_user
 
     respond_to do |format|
       if @medium.save

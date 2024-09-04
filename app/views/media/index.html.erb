@@ -1,14 +1,26 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Media</h1>
-
-<div id="media">
-  <% @media.each do |medium| %>
-    <%= render medium %>
-    <p>
-      <%= link_to "Show this medium", medium %>
-    </p>
+<% content_for(:title) do %>
+  Media | Andy's Tech and Art Space
+<% end %>
+<div class="text-center">
+  <h1 class="mb-3">Andy's Media</h1>
+  <p class="mb-2">Here's where I post about what I'm reading/watching/playing at the moment. If I post it here I like it, so I won't be doing in-depth reviews.</p>
+  <% if user_signed_in? %>
+    <% if current_user.role == 'admin' %>
+      <p><%= link_to "New medium", new_medium_path %></p>
+    <% end %>
   <% end %>
+  <div id="media" class="list-group">
+    <% @media.each do |medium| %>
+      <div class="list-group-item p-3">
+        <h3><%= link_to medium.title, medium %></h3>
+        <p>Posted: <%= medium.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= paginate @posts, theme: 'bootstrap-5',
+                 pagination_class: "pagination-sm flex-wrap justify-content-center",
+                 nav_class: "d-inline-block" %>
+  </div>
 </div>
 
-<%= link_to "New medium", new_medium_path %>
