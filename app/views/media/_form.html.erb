@@ -28,12 +28,12 @@
 
   <div class="mb-3">
     <%= form.label :type, style: "display: block" %>
-    <%= form.number_field :type %>
+    <%= form.select(:type, Medium.types.keys.map {|type| [type.titleize,type]}) %>
   </div>
 
   <div class="mb-3">
     <%= form.label :platform, style: "display: block" %>
-    <%= form.number_field :platform %>
+    <%= form.select(:platform, Medium.platforms.keys.map {|platform| [platform.titleize,platform]}) %>
   </div>
 
   <div class="mb-3">
@@ -58,7 +58,7 @@
 
   <div>
     <%= form.label :progress, style: "display: block" %>
-    <%= form.number_field :progress %>
+    <%= form.select(:progress, Medium.progresses.keys.map {|progress| [progress.titleize,progress]}) %>
   </div>
 
   <div>

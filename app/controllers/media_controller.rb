@@ -7,7 +7,7 @@ class MediaController < ApplicationController
 
   # GET /media or /media.json
   def index
-    @media = Medium.all
+    @media = Medium.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   # GET /media/1 or /media/1.json
