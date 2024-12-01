@@ -3,7 +3,7 @@ class CreateMedia < ActiveRecord::Migration[7.1]
     create_table :media do |t|
       t.text :name
       t.date :release_date
-      t.integer :type
+      t.integer :category
       t.integer :platform
       t.string :link
       t.text :thoughts

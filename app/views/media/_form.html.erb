@@ -27,13 +27,13 @@
   </div>
 
   <div class="mb-3">
-    <%= form.label :type, style: "display: block" %>
-    <%= form.select(:type, Medium.types.keys.map {|type| [type.titleize,type]}) %>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.select(:category, Medium.categories.keys.map {|category| [category.titleize, category]}) %>
   </div>
 
   <div class="mb-3">
     <%= form.label :platform, style: "display: block" %>
-    <%= form.select(:platform, Medium.platforms.keys.map {|platform| [platform.titleize,platform]}) %>
+    <%= form.select(:platform, Medium.platforms.keys.map {|platform| [platform.titleize, platform]}) %>
   </div>
 
   <div class="mb-3">

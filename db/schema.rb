@@ -84,7 +84,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_04_145838) do
   create_table "media", force: :cascade do |t|
     t.text "name"
     t.date "release_date"
-    t.integer "type"
+    t.integer "category"
     t.integer "platform"
     t.string "link"
     t.text "thoughts"
