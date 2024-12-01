@@ -9,7 +9,7 @@ class Medium < ApplicationRecord
 
   validates :name, presence: true
   validates :release_date, presence: true
-  validates :type, presence: true
+  validates :category, presence: true
   validates :platform, presence: true
 
 end

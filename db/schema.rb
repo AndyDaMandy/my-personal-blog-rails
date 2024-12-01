@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_04_145838) do
+ActiveRecord::Schema[7.1].define(version: 2024_12_01_204224) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -93,8 +93,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_04_145838) do
     t.integer "progress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id"
-    t.index ["users_id"], name: "index_media_on_users_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_media_on_user_id"
   end
 
   create_table "portfolios", force: :cascade do |t|
@@ -143,6 +143,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_04_145838) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "artworks", "users"
   add_foreign_key "links", "users"
+  add_foreign_key "media", "users"
   add_foreign_key "portfolios", "users"
   add_foreign_key "posts", "users"
 end
