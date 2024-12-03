@@ -1,10 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @medium %>
-
+<% content_for(:title) do %>
+  <%= @medium.name %> | Andy's Tech and Art Space
+<% end %>
 <div>
-  <%= link_to "Edit this medium", edit_medium_path(@medium) %> |
   <%= link_to "Back to media", media_path %>
-
-  <%= button_to "Destroy this medium", @medium, method: :delete %>
 </div>
+
+<div class="my-2 py-2">
+  <%= render @medium %>
+</div>
+
+<div class="my-2 py-2">
+  <%= link_to "Back to media", media_path %>
+</div>
+
+<% if user_signed_in? %>
+  <%if current_user.role == "admin"%>
+  <div class="border border-danger">
+  <div class="my-5">
+  <%= button_to "Destroy this Media", @medium, method: :delete %>
+  </div>
+  <div class="mb-3">
+  <%= link_to "Edit this Media", edit_medium_path(@medium) %>
+  </div>
+  </div>
+  <% end %>
+<% end %>
