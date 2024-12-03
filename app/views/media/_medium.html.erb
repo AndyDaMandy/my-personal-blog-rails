@@ -1,14 +1,11 @@
 <div id="<%= dom_id medium %>">
-  <p>
-    <strong>Name:</strong>
+  <h2>
     <%= medium.name %>
-  </p>
+  </h2>
 
-  <p>
-    <strong>Thumbnail:</strong>
-    <%= link_to medium.thumbnail.filename, medium.thumbnail if medium.thumbnail.attached? %>
-  </p>
-
+  <div class="mt-3">
+    <%= image_tag medium.image, class: "img-fluid" %>
+  </div>
   <p>
     <strong>Release date:</strong>
     <%= medium.release_date %>
@@ -20,7 +17,7 @@
   </p>
 
   <p>
-    <strong>Platform:</strong>
+    <strong>Platform I'm using (it could be on more than one):</strong>
     <%= medium.platform.humanize.capitalize %>
   </p>
 
