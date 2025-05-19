@@ -8,9 +8,13 @@
     <%= artwork.description %>
     </em>
   </p>
+  <% begin %>
   <div class="mt-3">
     <%= image_tag artwork.image, class: "img-fluid" %>
   </div>
+  <% rescue %>
+  <p>No image found! Something went wrong, alas</p>
+  <% end %>
 
 
 </div>
