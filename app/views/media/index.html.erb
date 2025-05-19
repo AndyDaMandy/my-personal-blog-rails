@@ -13,7 +13,11 @@
     <% @media.each do |medium| %>
       <div class="list-group-item p-3">
         <h3><%= link_to medium.name, medium %></h3>
+        <% begin %>
         <%= image_tag medium.thumbnail, class: "img-thumbnail", style: "width: 50%;"%>
+        <% rescue %>
+        <p>No image found!</p>
+        <% end %>
         <p>Posted: <%= medium.created_at.strftime("%Y-%m-%d %H:%M") %></p>
       </div>
     <% end %>
