@@ -2,9 +2,11 @@
     <h1 class="card-title py-3 mb-3">Andy's Tech and Art Space</h1>
 
     <div class="card p-3 mb-3">
-        <%= link_to @latest_artwork do %>
-        <%= image_tag @latest_artwork.image, class: "img-fluid", style: "width: 50%;"%>
+        <div class="container-sm">
+            <%= link_to @latest_artwork do %>
+            <%= image_tag @latest_artwork.image, class: "img-fluid"%>
         <% end%>
+        <div>
         <p>
             <strong>Latest Artwork:</strong> <%= @latest_artwork.title%>
         </p>
