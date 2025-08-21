@@ -9,10 +9,12 @@
         <div>
         <p>
             <strong>Latest Artwork:</strong> <%= @latest_artwork.title%>
+            | <em><%= @latest_artwork.description %></em>
         </p>
-        <p>
             <hr>
-            <%= link_to "All Artworks", artworks_path %>
+            <h2>
+            <%= link_to "View all Artwork", artworks_path %>
+            </h2>
     </div>
     <div class="card-body py-2">
         <ul class="list-group mb-4">
