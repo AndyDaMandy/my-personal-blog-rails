@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :artworks, dependent: :destroy
   has_many :media, dependent: :destroy
 
-  enum role: %i[user moderator admin]
+  enum :role, { user: 0, moderator: 1, admin: 2 }
   after_initialize :set_default_role, if: :new_record?
   def set_default_role
     self.role ||= :user
